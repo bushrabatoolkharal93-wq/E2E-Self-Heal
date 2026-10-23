@@ -7,6 +7,9 @@ export default defineConfig(({ mode }) => {
   const apiTarget = env.PRODUCT_API_URL || "http://localhost:8000";
   return {
     plugins: [react(), tailwindcss()],
+    test: {
+      environment: "jsdom",
+    },
     server: {
       proxy: {
         "/api": {
